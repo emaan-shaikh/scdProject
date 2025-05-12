@@ -1,0 +1,20 @@
+# docker-compose.yml
+version: '3'
+services:
+  mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    restart: always
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/your-db-name
+

@@ -1,0 +1,11 @@
+FROM node:18
+WORKDIR /app
+
+# Copy frontend code
+COPY Frontend/inventory_management_system/package*.json ./
+RUN npm install
+COPY Frontend/inventory_management_system .
+
+EXPOSE 3000
+CMD ["npm", "start"]
+
