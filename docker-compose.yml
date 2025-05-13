@@ -16,5 +16,5 @@ services:
     depends_on:
       - mongo
     environment:
-      - MONGO_URI=mongodb://mongo:27017/your-db-name
+      - MONGO_URI=mongodb://mongo:27017/yourdb
 

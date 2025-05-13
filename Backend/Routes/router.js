@@ -4,6 +4,7 @@ const products = require('../Models/Products');
 
 //Inserting(Creating) Data:
 router.post("/insertproduct", async (req, res) => {
+    console.log("Insert Product called"); // Add this
     const { ProductName, ProductPrice, ProductBarcode } = req.body;
 
     try {
